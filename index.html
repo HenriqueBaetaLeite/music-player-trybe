@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./assets/logo_02.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://kit.fontawesome.com/04f4613e39.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Music Player Trybe</title>
+  </head>
+  <body>
+    <main>
+      <section class="controle">
+        <div class="on-off">
+          <button class="button-on">
+            <img class="power" src="power-off-solid.svg" alt="power-off" />
+          </button>
+          <button class="button-mute">
+            <img class="mute" src="microphone-alt-slash-solid.svg" alt="mute" />
+          </button>
+        </div>
+        <div class="play-stop">
+          <button class="stop">
+            <img class="pause" src="pause-solid.svg" alt="pause" />
+          </button>
+          <button class="play-pause">
+            <img class="play" src="play-solid.svg" alt="play" />
+          </button>
+        </div>
+        <div class="foward-backward">
+          <button class="backward">
+            <img
+              class="backward-img"
+              src="step-backward-solid.svg"
+              alt="step-backward"
+            />
+          </button>
+          <button class="foward">
+            <img
+              class="foward-img"
+              src="step-forward-solid.svg"
+              alt="step-foward"
+            />
+          </button>
+        </div>
+        <div class="volume">
+          <button type="button" class="volume-up">
+            <img class="vol-up" src="volume-up-solid.svg" alt="volume-up" />
+          </button>
+          <button class="volume-down">
+            <img
+              class="vol-down"
+              src="volume-down-solid.svg"
+              alt="volume-down"
+            />
+          </button>
+        </div>
+        <div class="trybe-logo">
+          <img
+            class="trybe-img-on"
+            src="./assets/logo_01.png"
+            alt="logo Trybe"
+          />
+        </div>
+      </section>
+      <section class="player">
+        <div class="outside-disc animation-play">
+          <div class="inside-disc" width="10px">
+            <!-- <div class="center-disc"> -->
+            <img
+              class="disc-logo animation-play"
+              src="./assets/logo_02.png"
+              alt="logo Trybe"
+            />
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="cable-top"></div>
+        <div class="cable"></div>
+        <audio class="play-mp3"></audio>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
