@@ -278,16 +278,6 @@ main {
     inset 1px 3px 12px 4px var(--roxo-escuro);
 }
 
-.center-disc {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  background-color: var(--roxo-claro);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .player .cable-top {
   width: 35px;
   height: 35px;

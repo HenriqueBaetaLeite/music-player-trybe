@@ -81,8 +81,6 @@ function previousMusic() {
   if (!on) return;
   const actualSong = playMP3.src.substr(21);
   const indexOfActualSong = myMusics.indexOf(actualSong);
-  console.log(actualSong);
-  console.log(indexOfActualSong);
 
   if (indexOfActualSong <= 0) {
     songNow = myMusics[2];
