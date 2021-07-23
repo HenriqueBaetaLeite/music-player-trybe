@@ -69,11 +69,11 @@ function muteMusic() {
 
   isMuted = !isMuted;
   if (isMuted) {
-    muteSymbol.src = "microphone-alt-solid.svg";
+    muteSymbol.src = "./assets/microphone-alt-solid.svg";
     muteSymbol.style.width = "12px";
   } else {
     muteSymbol.style.width = "20px";
-    muteSymbol.src = "microphone-alt-slash-solid.svg";
+    muteSymbol.src = "./assets/microphone-alt-slash-solid.svg";
   }
 }
 

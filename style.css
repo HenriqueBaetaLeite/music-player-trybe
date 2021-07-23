@@ -29,7 +29,7 @@ verde claro #2fc18c
 }
 
 body {
-  background-image: url("Wallpaper_05.png");
+  background-image: url("./assets/Wallpaper_05.png");
   background-position: center;
   overflow: hidden;
 }
@@ -199,13 +199,6 @@ main {
   width: 15px;
   filter: invert(28%) sepia(22%) saturate(3890%) hue-rotate(135deg)
     brightness(93%) contrast(98%);
-}
-
-.volume-text {
-  margin-right: 11%;
-  font-size: 1.3em;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .trybe-img-on {
