@@ -20,18 +20,14 @@ const fowardButton = document.querySelector(".foward");
 const backwardButton = document.querySelector(".backward");
 
 const myMusics = [
-  "./assets/mestre_testes_isaac.mp3",
-  "./assets/rock.mp3",
-  "./assets/patrick_patrikios.mp3",
+  "/assets/mestre_testes_isaac.mp3",
+  "/assets/rock.mp3",
+  "/assets/patrick_patrikios.mp3",
 ];
-
-const randomMusic = (number) => {
-  const randomNumber = Math.floor(Math.random() * number);
-  return myMusics[randomNumber];
-};
 
 let on = false;
 let isMuted = false;
+let songNow = myMusics[0];
 let volumeMP3 = 0.3;
 playMP3.volume = volumeMP3;
 
@@ -47,18 +43,18 @@ function turnOnOff() {
 }
 
 function turnDownVolume() {
-  playMP3.volume -= 0.1;
-  volumeMP3 = playMP3.volume;
+  volumeMP3 -= 0.1;
+  playMP3.volume = volumeMP3;
 }
 
 function turnUpVolume() {
-  playMP3.volume += 0.1;
-  volumeMP3 = playMP3.volume;
+  volumeMP3 += 0.1;
+  playMP3.volume = volumeMP3;
 }
 
 function playMusic() {
-  const song = myMusics[0];
-  playMP3.src = song;
+  if (!on) return;
+  playMP3.src = songNow;
   playMP3.play();
   discLogo.style.animationPlayState = "running";
 }
@@ -69,9 +65,9 @@ function pauseMusic() {
 }
 
 function muteMusic() {
-  playMP3.volume = isMuted ? volumeMP3 : 0.0;
-  isMuted = !isMuted;
+  isMuted ? (playMP3.volume = volumeMP3) : (playMP3.volume = 0);
 
+  isMuted = !isMuted;
   if (isMuted) {
     muteSymbol.src = "microphone-alt-solid.svg";
     muteSymbol.style.width = "12px";
@@ -82,27 +78,35 @@ function muteMusic() {
 }
 
 function previousMusic() {
-  const actualSong = playMP3.src.substr(22);
-  const eu = myMusics.indexOf(actualSong);
+  if (!on) return;
+  const actualSong = playMP3.src.substr(21);
+  const indexOfActualSong = myMusics.indexOf(actualSong);
+  console.log(actualSong);
+  console.log(indexOfActualSong);
 
-  if (eu <= 0) {
-    playMP3.src = myMusics[2];
+  if (indexOfActualSong <= 0) {
+    songNow = myMusics[2];
+    playMP3.src = songNow;
     playMP3.play();
   } else {
-    playMP3.src = myMusics[eu - 1];
+    songNow = myMusics[indexOfActualSong - 1];
+    playMP3.src = songNow;
     playMP3.play();
   }
 }
 
 function nextMusic() {
-  const actualSong = playMP3.src.substr(22);
-  const eu = myMusics.indexOf(actualSong);
+  if (!on) return;
+  const actualSong = playMP3.src.substr(21);
+  const indexOfActualSong = myMusics.indexOf(actualSong);
 
-  if (eu >= 2) {
-    playMP3.src = myMusics[0];
+  if (indexOfActualSong >= 2) {
+    songNow = myMusics[0];
+    playMP3.src = songNow;
     playMP3.play();
   } else {
-    playMP3.src = myMusics[eu + 1];
+    songNow = myMusics[indexOfActualSong + 1];
+    playMP3.src = songNow;
     playMP3.play();
   }
 }
